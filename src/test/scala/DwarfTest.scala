@@ -1,4 +1,4 @@
-import org.scalatest.{FlatSpec}
+import org.scalatest.FlatSpec
 
 /**
   * Created by g.bernonville-ext on 09/12/2016.
@@ -9,12 +9,8 @@ class DwarfTest extends FlatSpec {
       """3
         |1 2
         |1 3
-        |3 4
-      """.stripMargin
-    println(input)
-    Solution.tree(input.split("\n").toIterator).foreach(
-      println
-    )
-    assert(Solution.tree(input.split("\n").toIterator) === (1, 2))
+        |3 4""".stripMargin
+
+    assert (Solution.tree(input.split("\r\n").toIterator) === Map(1 -> List(2, 3), 3 -> List(4)))
   }
 }
